@@ -1,24 +1,9 @@
-FROM        quay.io/prometheus/busybox:latest
-#MAINTAINER  The Prometheus Authors <prometheus-developers@googlegroups.com>
+FROM	prom/prometheus
+ADD	prometheus.yml /etc/prometheus/
 
-#COPY prometheus                             /bin/prometheus
-#COPY promtool                               /bin/promtool
-#COPY documentation/examples/prometheus.yml  /etc/prometheus/prometheus.yml
-#COPY console_libraries/                     /etc/prometheus/
-#COPY consoles/                              /etc/prometheus/
+FROM	python:2.7-slim
 
-#EXPOSE     9090
-#VOLUME     [ "/prometheus" ]
-#WORKDIR    /prometheus
-#ENTRYPOINT [ "/bin/prometheus" ]
-#CMD        [ "-config.file=/etc/prometheus/prometheus.yml", \
-#             "-storage.local.path=/prometheus", \
-#             "-web.console.libraries=/etc/prometheus/console_libraries", \
-#             "-web.console.templates=/etc/prometheus/consoles" ]
+WORKDIR	/rs_proj
+ADD	. /rs_proj
 
-FROM 		python:2.7-slim
-
-WORKDIR		/rs_proj
-ADD		. /rs_proj
-
-CMD	  	["python", "src/rs_proj_main.py"]
+CMD	["python", "src/rs_proj_main.py"]
