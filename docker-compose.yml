@@ -5,12 +5,16 @@ volumes:
   grafana-storage: {}
 
 services:
+  main_service:
+    build: .
   prometheus:
     image: "prom/prometheus"
     volumes:
      - prometheus-storage:/prometheus
      - ./config/prometheus.yml:/etc/prometheus/prometheus.yml
     command: "--config.file=/etc/prometheus/prometheus.yml --storage.tsdb.path=/prometheus"
+    depends_on:
+     - main_service
     ports:
      - "9090:9090"
   grafana:
