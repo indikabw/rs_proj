@@ -1,3 +1,6 @@
+#	Author: Indika Wijayasinghe
+#	Email: i.b.wijayasinghe@ieee.org
+
 FROM	python:2.7-slim
 ADD		. /source
 WORKDIR	/source
