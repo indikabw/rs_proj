@@ -3,10 +3,17 @@ Project RS fetches real-time bitcoin price from [Coinbase](https://api.coinbase.
 
 ## Prerequisites
 ### Installing Docker CE
-Docker CE can be installed using several methods (see [Docker Docs](https://docs.docker.com/install/linux/docker-ce/ubuntu/)). Following is a easy method to install using a script.
+Docker CE can be installed using several methods (see [Docker Docs](https://docs.docker.com/install/linux/docker-ce/ubuntu/)). 
+
+First, the repository has to be initialized using the following commands.
 ```
-curl -fsSL get.docker.com -o get-docker.sh
-sh get-docker.sh
+sudo apt-get update
+sudo apt-get install apt-transport-https ca-certificates curl software-properties-common
+```
+Then docker-ce can be installed using the following commands.
+```
+sudo apt-get update
+sudo apt-get install docker-ce
 ```
 To run docker as non-root user, use the following command. Remember to log out and log back in for this to take effect.
 ```
