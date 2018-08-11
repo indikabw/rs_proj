@@ -3,7 +3,7 @@ Project RS fetches real-time bitcoin price from [Coinbase](https://api.coinbase.
 
 ## Prerequisites
 ### Installing Docker CE
-Docker CE can be installed using several methods (see [Docker Docs](https://docs.docker.com/install/linux/docker-ce/ubuntu/). Following is a easy method to install using a script.
+Docker CE can be installed using several methods (see [Docker Docs](https://docs.docker.com/install/linux/docker-ce/ubuntu/)). Following is a easy method to install using a script.
 ```
 curl -fsSL get.docker.com -o get-docker.sh
 sh get-docker.sh
