@@ -19,9 +19,9 @@ docker-compose --version
 ```
 
 ## Build and Run Project RS
-Following docker-compose commands are used to build and run the project: (may need to sudo if proper permissions are not)
+Following docker-compose commands are used to build and run the project:
 ```
-docker-compose up
+sudo docker-compose up
 ```
 ## Viewing Time-Series Data in Grafana
 To plot the time-series data in real-time, open a browser and visit the following address:
@@ -30,4 +30,4 @@ http://localhost:3000
 ```
 Login with `username: admin` and `password: abc123` (admin password can be changed in grafana.yml). 
 
-Then go to dashboards and click on the 'Bitcoin Price Index Dashboard' to view the time-series data in a plot that refreshes every 15s.
+Then go to `Dashboards > Manage` and click on the 'Bitcoin Price Index Dashboard' to view the time-series data in a plot that refreshes every 15s.
