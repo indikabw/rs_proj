@@ -9,7 +9,7 @@ from prometheus_client import start_http_server, Gauge
 import time, httplib, json
 
 # Connection to Bitstamp API.
-conn = httplib.HTTPSConnection("www.bitstamp.net")
+conn = httplib.HTTPSConnection("api.coinbase.com")
 
 # Create a metric to track bitcoin price.
 bv = Gauge('bitcoin_value', 'Bitcoin Price Index')
@@ -19,8 +19,9 @@ if __name__ == '__main__':
 	start_http_server(8000)
 	# Generate requests 15 seconds.
 	while True:
-		conn.request("GET", "/api/ticker/")
+		conn.request("GET", "/v2/prices/spot?currency=USD")
 		r = conn.getresponse()
 		r_dict = json.loads(r.read())
-		bv.set(r_dict["last"])
+		bv.set(r_dict["data"]["amount"])
 		time.sleep(15)
+
