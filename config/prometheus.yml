@@ -1,5 +1,8 @@
-# A scrape configuration scraping a Node Exporter and the Prometheus server
-# itself.
+# A scrape configuration scraping a Node Exporter and the Prometheus server itself.
+global:
+  scrape_timeout: 15s
+  evaluation_interval: 15s
+
 scrape_configs:
   # Scrape Prometheus itself every 5 seconds.
   - job_name: 'prometheus'
@@ -7,9 +10,9 @@ scrape_configs:
     static_configs:
       - targets: ['localhost:9090']
 
-  # Scrape the Node Exporter every 5 seconds.
-  #- job_name: 'node'
-  #  scrape_interval: 5s
-  #  target_groups:
-  #    - targets: ['localhost:9100']
+  # Scrape the my job every 5 seconds.
+  - job_name: 'my_job'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['localhost:8000']
 
