@@ -1,10 +1,10 @@
 FROM	python:2.7-slim
-ADD		. /src
-WORKDIR	/src
+ADD		. /source
+WORKDIR	/source
 
-RUN pip install --trusted-host pypi.python.org -r config/requirements.txt
+RUN pip install --trusted-host pypi.python.org -r app/conf/requirements.txt
 
 EXPOSE	9090
 EXPOSE	8000
 
-CMD	["python", "src/app.py"]
+CMD	["python", "app/src/main_app.py"]
