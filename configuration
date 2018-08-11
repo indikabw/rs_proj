@@ -1,0 +1,21 @@
+#!/bin/bash
+#
+#	Author: Indika Wijayasinghe
+#	Email: i.b.wijayasinghe@ieee.org
+#
+#	Description: This script automates the process of installing
+# 			       Docker CE and Docker Compose
+
+echo "Installing Docker-CE..."
+apt-get update
+apt-get install apt-transport-https ca-certificates curl software-properties-common
+apt-get update
+apt-get install docker-ce
+
+echo "Installing Docker-Compose..."
+curl -L https://github.com/docker/compose/releases/download/1.22.0/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
+chmod +x /usr/local/bin/docker-compose
+
+echo "Docker installed successfully!"
+
+
