@@ -14,7 +14,7 @@ services:
     image: "prom/prometheus"
     volumes:
      - prometheus-storage:/prometheus
-     - ./config/prometheus.yml:/etc/prometheus/prometheus.yml
+     - ./prometheus/conf/prometheus.yml:/etc/prometheus/prometheus.yml
     command: "--config.file=/etc/prometheus/prometheus.yml --storage.tsdb.path=/prometheus"
     depends_on:
      - main_service
@@ -24,7 +24,7 @@ services:
   grafana:
     image: "grafana/grafana"
     env_file:
-     - ./config/grafana.yml
+     - ./grafana/conf/grafana.yml
     volumes:
      - grafana-storage:/var/lib/grafana
      - ./grafana/provisioning/:/etc/grafana/provisioning/
