@@ -17,7 +17,7 @@ To test the installation, use:
 sudo docker run hello-world
 ```
 ### Installing Docker-Compose
-Docker-Compose can be installed using the following commands (reference [Docker Docs](https://docs.docker.com/compose/install/#install-compose).
+Docker-Compose can be installed using the following commands (reference [Docker Docs](https://docs.docker.com/compose/install/#install-compose)).
 ```
 sudo curl -L https://github.com/docker/compose/releases/download/1.22.0/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
