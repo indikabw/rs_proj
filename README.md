@@ -28,4 +28,6 @@ To plot the time-series data in real-time, open a browser and visit the followin
 ```
 http://localhost:3000
 ```
+Login with `username: admin` and `password: abc123` (admin password can be changed in grafana.yml). 
+
 Then go to dashboards and click on the 'Bitcoin Price Index Dashboard' to view the time-series data in a plot that refreshes every 15s.
