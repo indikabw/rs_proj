@@ -1,10 +1,9 @@
 from prometheus_client import start_http_server, Gauge
+from random import random
 import time
 
-my_counter = 0
-
 # Create a metric to track time spent and requests made.
-TEST_VALUE = Gauge('vault_total_conection', 'Description of gauge')
+tv = Gauge('counter_value', 'Random')
 
 if __name__ == '__main__':
 	# Start up the server to expose the metrics.
@@ -12,5 +11,4 @@ if __name__ == '__main__':
 	# Generate some requests.
 	while True:
 		time.sleep(1)
-		TEST_VALUE.set(my_counter)
-		my_counter = my_counter + 1
+		tv.set(random())
