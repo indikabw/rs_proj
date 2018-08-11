@@ -17,11 +17,22 @@ bv = Gauge('bitcoin_value', 'Bitcoin Price Index')
 if __name__ == '__main__':
 	# Start up the server to expose the metrics.
 	start_http_server(8000)
+
+	# Hold previous value
+	prev = 0
+
 	# Generate requests 15 seconds.
 	while True:
 		conn.request("GET", "/v2/prices/spot?currency=USD")
 		r = conn.getresponse()
 		r_dict = json.loads(r.read())
-		bv.set(r_dict["data"]["amount"])
+
+		try:
+			curr = r_dict["data"]["amount"]
+		except:
+			curr = prev
+
+		bv.set(curr)
+		prev = curr
 		time.sleep(15)
 
