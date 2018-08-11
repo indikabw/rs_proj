@@ -1,7 +1,7 @@
 # Project RS
 Project RS fetches real-time bitcoin price from [Coinbase](https://api.coinbase.com/) and stores the data in a [Prometheus](https://prometheus.io/) time series database. The real-time data can be plotted using [Grafana](https://grafana.com/) platform for analysis. 
 
-## Installing Prerequisites
+## Prerequisites
 ### Installing Docker CE
 Docker CE can be installed using several methods (see [Docker Docs](https://docs.docker.com/install/linux/docker-ce/ubuntu/). Following is a easy method to install using a script.
 ```
@@ -27,12 +27,12 @@ To test the installation, use:
 docker-compose --version
 ```
 
-## Build and Run
+## Build and Run Project RS
 The following docker-compose commands are used to build and run the project: (may need to sudo if proper permissions are not)
 ```
 docker-compose up
 ```
-## Plotting Time-Series Data in Grafana
+## Viewing Time-Series Data in Grafana
 To plot the time-series data in real-time, open a browser and visit the following address:
 ```
 http://localhost:3000
