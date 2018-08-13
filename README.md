@@ -5,7 +5,7 @@ Project RS fetches real-time bitcoin price from [Coinbase](https://api.coinbase.
 ### Installing Docker CE and Docker Compose
 There are several methods to install Docker CE (see [Docker Docs](https://docs.docker.com/install/linux/docker-ce/ubuntu/)) and Docker Compose (see [Docker Docs](https://docs.docker.com/compose/install/#install-compose)). A configuration file is included to automate the process of installing these packages. Use this script as follows:
 ```
-sudo ./configure
+sudo ./configuration
 ```
 
 To test the installation of Docker CE, use:
